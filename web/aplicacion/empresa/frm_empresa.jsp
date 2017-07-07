@@ -80,7 +80,7 @@
                                         <label>Ciudad</label>
                                         <div id="ciudades">
                                         <select class="form-control  input-sm" name="ciudad"   required="required" id="ciudad" >
-                                            <option value='0' >Seleccionar Ciudad</option>
+                                            <option value='0' >- Seleccionar Ciudad -</option>
                                             
                                         </select></div>
                                     </div>
@@ -92,7 +92,7 @@
                                 <textarea type="text" class="form-control  input-sm" placeholder="Ingrese Dirección" required="required" name="direccion" id="direccion"></textarea>
                             </div>
                             <div class=" form-group">
-                                <label>Email de Contacto:</label>
+                                <label>E-mail de Contacto:</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                     <input type="email" onkeyup="ValidaEmailOk();"  class="form-control  input-sm" placeholder="Email"  required="required" name="mail" id="mail">
