@@ -16,8 +16,8 @@
     <body>
         <div>
             <ol class="breadcrumb">
-                <li><a href="#"  onclick="empresa(this)">Lista Empresas</a></li>
-                <li class="active"><a href="#"  onclick="frm_empresa(this)">Registra Empresas</a></li>
+                <li><a href="#"  onclick="empresa(this)">Listando Empresas</a></li>
+                <li class="active"><a href="#"  onclick="frm_empresa(this)">Registrar Empresas</a></li>
             </ol> 
             <div class="col-md-6">                
                     <form name="form" action="empresa" method="post" class="well" id="data">  
