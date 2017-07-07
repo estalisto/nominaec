@@ -80,7 +80,7 @@
                                         <label>Ciudad</label>
                                         <div id="ciudades">
                                         <select class="form-control  input-sm" name="ciudad"   required="required" id="ciudad" >
-                                            <option value='0' >- Seleccionar Ciudad -</option>
+                                            <option value='0' >Seleccionar Ciudad -</option>
                                             
                                         </select></div>
                                     </div>
