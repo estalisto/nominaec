@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04/07/2017 17:52:40 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.nomina.modal.ClEmpresas" table="cl_empresas" schema="public" optimistic-lock="version">
+        <comment>Registro de Empresas que existen en el sistema</comment>
+        <id name="idEmpresa" type="int">
+            <column name="id_empresa" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="clCiudad" class="com.nomina.modal.ClCiudad" fetch="select">
+            <column name="id_ciudad">
+                <comment>Identificador &#250;nico de Ciudad</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="clPais" class="com.nomina.modal.ClPais" fetch="select">
+            <column name="id_pais" />
+        </many-to-one>
+        <many-to-one name="clProvincia" class="com.nomina.modal.ClProvincia" fetch="select">
+            <column name="id_provincia">
+                <comment>Identificador &#250;nico de Provincia</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="clTiposIdentificacion" class="com.nomina.modal.ClTiposIdentificacion" fetch="select">
+            <column name="tipo_identificacion">
+                <comment>Tipo de Identificaci&#243;n</comment>
+            </column>
+        </many-to-one>
+        <property name="identificacion" type="string">
+            <column name="identificacion" length="13">
+                <comment>N&#250;mero de Identificaci&#243;n</comment>
+            </column>
+        </property>
+        <property name="razonSocial" type="string">
+            <column name="razon_social" length="100">
+                <comment>Raz&#243;n Social de la Empresa</comment>
+            </column>
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="100">
+                <comment>Direcci&#243;n de la Empresa</comment>
+            </column>
+        </property>
+        <property name="telefonos" type="string">
+            <column name="telefonos" length="100">
+                <comment>telefonos de la empresa</comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100">
+                <comment>Email de la empresa (Contacto)</comment>
+            </column>
+        </property>
+        <property name="fechaCreacion" type="timestamp">
+            <column name="fecha_creacion" length="29">
+                <comment>Fecha en que se crea la Empresa</comment>
+            </column>
+        </property>
+        <property name="fechaActualizacion" type="timestamp">
+            <column name="fecha_actualizacion" length="29">
+                <comment>fecha de actualizaci&#243;n</comment>
+            </column>
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="1">
+                <comment>"A" Activo, "I" Inactivo</comment>
+            </column>
+        </property>
+        <property name="telfonos2" type="string">
+            <column name="telfonos2" length="100" />
+        </property>
+        <property name="celular" type="string">
+            <column name="celular" length="100" />
+        </property>
+        <property name="sucursal" type="java.lang.Integer">
+            <column name="sucursal" />
+        </property>
+    </class>
+</hibernate-mapping>

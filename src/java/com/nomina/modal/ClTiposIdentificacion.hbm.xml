@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04/07/2017 17:52:40 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.nomina.modal.ClTiposIdentificacion" table="cl_tipos_identificacion" schema="public" optimistic-lock="version">
+        <id name="idTipoIdentificacion" type="int">
+            <column name="id_tipo_identificacion" />
+            <generator class="assigned" />
+        </id>
+        <property name="tipoIdentificacion" type="string">
+            <column name="tipo_identificacion" length="100" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="100" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="1" />
+        </property>
+        <set name="clEmpresases" table="cl_empresas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tipo_identificacion">
+                    <comment>Tipo de Identificaci&#243;n</comment>
+                </column>
+            </key>
+            <one-to-many class="com.nomina.modal.ClEmpresas" />
+        </set>
+    </class>
+</hibernate-mapping>
