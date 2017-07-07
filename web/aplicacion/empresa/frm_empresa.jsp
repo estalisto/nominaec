@@ -137,7 +137,7 @@
                             </div>
                             <div class=" form-group">
                                 <!-- <button type="submit" class="btn btn-primary fa fa-save"> Registrar</button>-->
-                                <input id="btncrearempresa" type="submit" value="Registrar" class="btn btn-primary"  title="Crea Empresa">
+                                <input id="btncrearempresa" type="submit" value="Grabar" class="btn btn-primary"  title="Crea Empresa">
                             </div>
                         </div>  
                     </form>
