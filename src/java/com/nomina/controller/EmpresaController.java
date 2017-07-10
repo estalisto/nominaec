@@ -105,11 +105,8 @@ public class EmpresaController extends HttpServlet {
                     telefono1,
                     telefono2,
                     celular,
-                    email.toLowerCase(),        
-                    fecha_registro,
-                    null,
-                    "A"
-                    ));
+                    email.toLowerCase(),  fecha_registro,
+                    null,                    "A"                    ));
            } catch (Exception ex) {
                 Logger.getLogger(EmpresaController.class.getName()).log(Level.SEVERE, null, ex);
                  response.getWriter().println("Promblemas al intentar Guardar datos de la empresa");  
