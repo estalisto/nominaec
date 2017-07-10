@@ -39,9 +39,9 @@ public class EmpresaController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       EmpresaServicios emp = new EmpresaServicios(); 
-       PaisServicios pais = new PaisServicios();
-          String accion;
+        EmpresaServicios emp = new EmpresaServicios(); 
+        PaisServicios pais = new PaisServicios();
+        String accion;
         accion = request.getParameter("accion");
         String tbEmpresa="",listPaises="";  
         
