@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 04/07/2017 17:52:40 by Hibernate Tools 4.3.1 -->
+<!-- Generated 10/07/2017 17:16:44 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="com.nomina.modal.ClProvincia" table="cl_provincia" schema="public" optimistic-lock="version">
+    <class name="com.nomina.model.ClProvincia" table="cl_provincia" schema="public" optimistic-lock="version">
         <id name="idProvincia" type="int">
             <column name="id_provincia" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="clPais" class="com.nomina.modal.ClPais" fetch="select">
+        <many-to-one name="clPais" class="com.nomina.model.ClPais" fetch="select">
             <column name="id_pais" />
         </many-to-one>
         <property name="provincia" type="string">
@@ -21,7 +21,7 @@
             <key>
                 <column name="id_provincia" />
             </key>
-            <one-to-many class="com.nomina.modal.ClCiudad" />
+            <one-to-many class="com.nomina.model.ClCiudad" />
         </set>
         <set name="clEmpresases" table="cl_empresas" inverse="true" lazy="true" fetch="select">
             <key>
@@ -29,7 +29,7 @@
                     <comment>Identificador &#250;nico de Provincia</comment>
                 </column>
             </key>
-            <one-to-many class="com.nomina.modal.ClEmpresas" />
+            <one-to-many class="com.nomina.model.ClEmpresas" />
         </set>
     </class>
 </hibernate-mapping>

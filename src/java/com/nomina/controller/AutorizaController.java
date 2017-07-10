@@ -5,7 +5,7 @@
  */
 package com.nomina.controller;
 
-import com.nomina.modal.LcUsers;
+import com.nomina.model.LcUsers;
 import com.nomina.servicios.UsuariosServicios;
 import java.io.IOException;
 import java.util.List;

@@ -31,7 +31,7 @@
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Tipo Identificación:</label>
-                                        <select class="form-control input-sm" name="t_identificacion" required="required" id="t_identificacion" onchange="validaselector()">
+                                        <select class="form-control input-sm" name="t_identificacion"  id="t_identificacion" onchange="validaselector()">
                                             <option value='0' >Seleccionar tipo de identificación</option>
                                             <option value='2' >R.U.C. (Registro Único de Cliente)</option>
                                         </select>
@@ -40,7 +40,7 @@
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Identificación:</label>
-                                        <input type="text" class="form-control  input-sm" maxlength="13" placeholder="Ingrese numero identificación" required="required" name="identificacion" id="identificacion" onkeyup="validaLongitudCED_RUC_HTML();">
+                                        <input type="text" class="form-control  input-sm" maxlength="13" placeholder="Ingrese numero identificación"  name="identificacion" id="identificacion" onkeyup="validaLongitudCED_RUC_HTML();">
                                          <div id="valido" class="form-group has-success" style="display: none"> <!--hidden-->
                                             <span class="help-block">Identificación Válida.</span>
                                         </div>
@@ -52,13 +52,13 @@
                             </div>
                             <div class="form-group">
                                 <label>Nombre Empresa:</label>
-                                <input type="text" class="form-control  input-sm" placeholder="Ingrese Nombre Empresa" required="required" name="nombre" id="nombre">
+                                <input type="text" class="form-control  input-sm" placeholder="Ingrese Nombre Empresa"  name="razon_social" id="razon_social">
                             </div>
                             <div class="row">
                                 <div class="col-xs-4">
                                     <div class="form-group">
                                         <label>País</label>
-                                        <select class="form-control  input-sm" name="pais" required="required" id="pais" onchange="obtenerProvincias()">
+                                        <select class="form-control  input-sm" name="pais"  id="pais" onchange="obtenerProvincias()">
                                             <option value='0' >Seleccionar País</option>
                                             <%= request.getAttribute("listPaises") %>
                                             
@@ -69,7 +69,7 @@
                                     <div class="form-group">
                                         <label>Provincia</label>
                                         <div id="provincias">
-                                        <select class="form-control  input-sm" name="provincia" required="required" id="provincia" onchange="obtenerCiudades()">
+                                        <select class="form-control  input-sm" name="provincia"  id="provincia" onchange="obtenerCiudades()">
                                             <option value='0' > - Seleccionar Provincias - </option>
                                         </select></div>
                                     </div>
@@ -79,7 +79,7 @@
                                         
                                         <label>Ciudad</label>
                                         <div id="ciudades">
-                                        <select class="form-control  input-sm" name="ciudad"   required="required" id="ciudad" >
+                                        <select class="form-control  input-sm" name="ciudad"   id="ciudad" >
                                             <option value='0' >Seleccionar Ciudad -</option>
                                             
                                         </select></div>
@@ -89,13 +89,13 @@
 
                             <div class="form-group">
                                 <label>Dirección:</label>
-                                <textarea type="text" class="form-control  input-sm" placeholder="Ingrese Dirección" required="required" name="direccion" id="direccion"></textarea>
+                                <textarea type="text" class="form-control  input-sm" placeholder="Ingrese Dirección"  name="direccion" id="direccion"></textarea>
                             </div>
                             <div class=" form-group">
                                 <label>E-mail de Contacto:</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                    <input type="email" onkeyup="ValidaEmailOk();"  class="form-control  input-sm" placeholder="Email"  required="required" name="mail" id="mail">
+                                    <input type="email" onkeyup="ValidaEmailOk();"  class="form-control  input-sm" placeholder="Email"   name="mail" id="mail">
                                   
                                 </div>  <span id="emailOK"></span>
                             </div>
@@ -107,7 +107,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-phone"></i>
                                             </div>
-                                            <input type="number" maxlength="10" class="form-control  input-sm" placeholder="029999999" name="telefono" id="telefono"   >
+                                            <input type="number" maxlength="10" class="form-control  input-sm" placeholder="029999999" name="telefono1" id="telefono1"   >
                                         </div>
 
                                     </div>
@@ -137,7 +137,7 @@
                             </div>
                             <div class=" form-group">
                                 <!-- <button type="submit" class="btn btn-primary fa fa-save"> Registrar</button>-->
-                                <input id="btncrearempresa" type="submit" value="Grabar" class="btn btn-primary"  title="Crea Empresa">
+                                <input id="btncrearempresa" type="button" onclick="grabaempresa();" value="Grabar" class="btn btn-primary"  title="Crea Empresa">
                             </div>
                         </div>  
                     </form>

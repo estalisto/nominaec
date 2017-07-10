@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 04/07/2017 17:52:40 by Hibernate Tools 4.3.1 -->
+<!-- Generated 10/07/2017 17:16:44 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="com.nomina.modal.ClPais" table="cl_pais" schema="public" optimistic-lock="version">
+    <class name="com.nomina.model.ClPais" table="cl_pais" schema="public" optimistic-lock="version">
         <id name="idPais" type="int">
             <column name="id_pais" />
             <generator class="assigned" />
@@ -21,13 +21,13 @@
             <key>
                 <column name="id_pais" />
             </key>
-            <one-to-many class="com.nomina.modal.ClEmpresas" />
+            <one-to-many class="com.nomina.model.ClEmpresas" />
         </set>
         <set name="clProvincias" table="cl_provincia" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="id_pais" />
             </key>
-            <one-to-many class="com.nomina.modal.ClProvincia" />
+            <one-to-many class="com.nomina.model.ClProvincia" />
         </set>
     </class>
 </hibernate-mapping>

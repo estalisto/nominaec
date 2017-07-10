@@ -46,11 +46,11 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/nominadb</property>
     <property name="hibernate.connection.username">postgres</property>
     <property name="hibernate.connection.password">sebas2008</property>
-    <mapping resource="com/nomina/modal/ClEmpresas.hbm.xml"/>
-    <mapping resource="com/nomina/modal/LcUsers.hbm.xml"/>
-    <mapping resource="com/nomina/modal/ClTiposIdentificacion.hbm.xml"/>
-    <mapping resource="com/nomina/modal/ClCiudad.hbm.xml"/>
-    <mapping resource="com/nomina/modal/ClPais.hbm.xml"/>
-    <mapping resource="com/nomina/modal/ClProvincia.hbm.xml"/>
+    <mapping resource="com/nomina/model/ClEmpresas.hbm.xml"/>
+    <mapping resource="com/nomina/model/ClTiposIdentificacion.hbm.xml"/>
+    <mapping resource="com/nomina/model/ClCiudad.hbm.xml"/>
+    <mapping resource="com/nomina/model/ClPais.hbm.xml"/>
+    <mapping resource="com/nomina/model/ClProvincia.hbm.xml"/>
+    <mapping resource="com/nomina/model/LcUsers.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

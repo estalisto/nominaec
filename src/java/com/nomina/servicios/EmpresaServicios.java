@@ -5,8 +5,8 @@
  */
 package com.nomina.servicios;
 
-import com.nomina.modal.ClEmpresas;
-import com.nomina.modal.HibernateUtil;
+import com.nomina.model.ClEmpresas;
+import com.nomina.model.HibernateUtil;
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -80,7 +80,7 @@ public class EmpresaServicios {
                     RowEmpresas+="<td>"+emp.getIdentificacion()+"</td>";   
                     RowEmpresas+="<td>"+emp.getRazonSocial()+"</td>";   
                     RowEmpresas+="<td>"+emp.getDireccion()+"</td>";
-                    RowEmpresas+="<td>"+emp.getTelefonos() +" "+emp.getTelfonos2()+"</td>";
+                    RowEmpresas+="<td>"+emp.getTelefonos1() +" "+emp.getTelefonos2()+" "+emp.getCelular()+"</td>";
                     RowEmpresas+="<td>"+emp.getEmail()+"</td>"; 
                     RowEmpresas+="<td>"+formatter.format(emp.getFechaCreacion())+"</td>";                      
                     RowEmpresas+="<td>"+estado+"</td>";   
@@ -95,6 +95,16 @@ public class EmpresaServicios {
          return RowEmpresas;
             
         }
+      public void addEmpresa(ClEmpresas empresa){
+        SessionFactory factory=HibernateUtil.getSessionFactory();
+        Session session= factory.openSession();
+        Transaction tx=session.beginTransaction();
+        session.save(empresa);
+        tx.commit();
+        session.close();
+      }
+      
+
      
      
 }

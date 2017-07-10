@@ -1,5 +1,5 @@
-package com.nomina.modal;
-// Generated 04/07/2017 17:52:39 by Hibernate Tools 4.3.1
+package com.nomina.model;
+// Generated 10/07/2017 17:16:44 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;

@@ -1,5 +1,5 @@
-package com.nomina.modal;
-// Generated 04/07/2017 17:52:39 by Hibernate Tools 4.3.1
+package com.nomina.model;
+// Generated 10/07/2017 17:16:44 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -18,14 +18,13 @@ public class ClEmpresas  implements java.io.Serializable {
      private String identificacion;
      private String razonSocial;
      private String direccion;
-     private String telefonos;
+     private String telefonos1;
+     private String telefonos2;
+     private String celular;
      private String email;
      private Date fechaCreacion;
      private Date fechaActualizacion;
      private String estado;
-     private String telfonos2;
-     private String celular;
-     private Integer sucursal;
 
     public ClEmpresas() {
     }
@@ -34,7 +33,7 @@ public class ClEmpresas  implements java.io.Serializable {
     public ClEmpresas(int idEmpresa) {
         this.idEmpresa = idEmpresa;
     }
-    public ClEmpresas(int idEmpresa, ClCiudad clCiudad, ClPais clPais, ClProvincia clProvincia, ClTiposIdentificacion clTiposIdentificacion, String identificacion, String razonSocial, String direccion, String telefonos, String email, Date fechaCreacion, Date fechaActualizacion, String estado, String telfonos2, String celular, Integer sucursal) {
+    public ClEmpresas(int idEmpresa, ClCiudad clCiudad, ClPais clPais, ClProvincia clProvincia, ClTiposIdentificacion clTiposIdentificacion, String identificacion, String razonSocial, String direccion, String telefonos1, String telefonos2, String celular, String email, Date fechaCreacion, Date fechaActualizacion, String estado) {
        this.idEmpresa = idEmpresa;
        this.clCiudad = clCiudad;
        this.clPais = clPais;
@@ -43,14 +42,13 @@ public class ClEmpresas  implements java.io.Serializable {
        this.identificacion = identificacion;
        this.razonSocial = razonSocial;
        this.direccion = direccion;
-       this.telefonos = telefonos;
+       this.telefonos1 = telefonos1;
+       this.telefonos2 = telefonos2;
+       this.celular = celular;
        this.email = email;
        this.fechaCreacion = fechaCreacion;
        this.fechaActualizacion = fechaActualizacion;
        this.estado = estado;
-       this.telfonos2 = telfonos2;
-       this.celular = celular;
-       this.sucursal = sucursal;
     }
    
     public int getIdEmpresa() {
@@ -109,12 +107,26 @@ public class ClEmpresas  implements java.io.Serializable {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    public String getTelefonos() {
-        return this.telefonos;
+    public String getTelefonos1() {
+        return this.telefonos1;
     }
     
-    public void setTelefonos(String telefonos) {
-        this.telefonos = telefonos;
+    public void setTelefonos1(String telefonos1) {
+        this.telefonos1 = telefonos1;
+    }
+    public String getTelefonos2() {
+        return this.telefonos2;
+    }
+    
+    public void setTelefonos2(String telefonos2) {
+        this.telefonos2 = telefonos2;
+    }
+    public String getCelular() {
+        return this.celular;
+    }
+    
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
     public String getEmail() {
         return this.email;
@@ -143,27 +155,6 @@ public class ClEmpresas  implements java.io.Serializable {
     
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-    public String getTelfonos2() {
-        return this.telfonos2;
-    }
-    
-    public void setTelfonos2(String telfonos2) {
-        this.telfonos2 = telfonos2;
-    }
-    public String getCelular() {
-        return this.celular;
-    }
-    
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
-    public Integer getSucursal() {
-        return this.sucursal;
-    }
-    
-    public void setSucursal(Integer sucursal) {
-        this.sucursal = sucursal;
     }
 
 

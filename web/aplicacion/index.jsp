@@ -175,7 +175,9 @@
       </nav>
 
       <!-- Main component for a primary marketing message or call to action -->
+      <div id="mensajeSalida"></div>
       <div id="idContenido">
+              
       
       
       </div>
@@ -187,7 +189,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster
     <script src="dist/plugins/jquery.maskedinput.min.js" type="text/javascript"></script>-->
-  <script src="jQuery/jquery-2.2.3.min.js"></script>
+<script src="jQuery/jquery-2.2.3.min.js"></script>
 <!--script src="../jQuery/jquery.maskMoney.js"></script-->
 <script src="dist/js/bootstrap.min.js"></script>
 <script src="js/menu.js"></script>

@@ -5,11 +5,18 @@
  */
 package com.nomina.controller;
 
-import com.nomina.modal.ClEmpresas;
+import com.nomina.model.ClCiudad;
+import com.nomina.model.ClEmpresas;
+import com.nomina.model.ClPais;
+import com.nomina.model.ClProvincia;
+import com.nomina.model.ClTiposIdentificacion;
 import com.nomina.servicios.EmpresaServicios;
 import com.nomina.servicios.PaisServicios;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -72,6 +79,60 @@ public class EmpresaController extends HttpServlet {
          response.getWriter().println(listCiudades);  
         
         }
+        if (accion.equals("crea_empresa")) {
+                       
+         int id_tipo_identificacion=Integer.parseInt(request.getParameter("id_tipo_identificacion"));
+         int id_pais=Integer.parseInt(request.getParameter("id_pais"));
+         int id_provincia=Integer.parseInt(request.getParameter("id_provincia"));
+         int id_ciudad=Integer.parseInt(request.getParameter("id_ciudad"));
+         String identificacion=request.getParameter("identificacion");
+         String razon_social=request.getParameter("razon_social");
+         String direccion=request.getParameter("direccion");
+         String telefono1=request.getParameter("telefono1");
+         String telefono2=request.getParameter("telefono2");
+         String celular=request.getParameter("celular");
+         String email=request.getParameter("email");
+         int idEmpresa=Integer.parseInt(emp.getNext().toString());
+         Date fecha_registro = new Date();
+         try{
+        emp.addEmpresa(new ClEmpresas(idEmpresa,
+                    new ClCiudad(id_ciudad),
+                    new ClPais(id_pais),
+                    new ClProvincia(id_provincia),
+                    new ClTiposIdentificacion(id_tipo_identificacion),
+                    identificacion,
+                    razon_social.toUpperCase(),
+                    direccion.toUpperCase(),
+                    telefono1,
+                    telefono2,
+                    celular,
+                    email.toLowerCase(),        
+                    fecha_registro,
+                    null,
+                    "A"
+                    ));
+           } catch (Exception ex) {
+                Logger.getLogger(EmpresaController.class.getName()).log(Level.SEVERE, null, ex);
+                 response.getWriter().println("Promblemas al intentar Guardar datos de la empresa");  
+            }
+
+
+
+         response.getWriter().println("Registrado Exitosamente...");  
+        
+        }
+         
+         
+         //   cs.addCargos(new LcCargos(id_cargo, (new LcEmpresa(empresa)), cargo, observacion, fecha_reg, "A", null));
+         /*
+          public void addCargos(LcCargos cargos){
+    SessionFactory factory=HibernateUtil.getSessionFactory();
+    Session session= factory.openSession();
+    Transaction tx=session.beginTransaction();
+    session.save(cargos);
+    tx.commit();
+    session.close();
+    }*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -5,8 +5,8 @@
  */
 package com.nomina.servicios;
 
-import com.nomina.modal.HibernateUtil;
-import com.nomina.modal.LcUsers;
+import com.nomina.model.HibernateUtil;
+import com.nomina.model.LcUsers;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

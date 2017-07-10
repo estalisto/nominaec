@@ -186,6 +186,61 @@ function obtenerCiudades(){
 }
 
 function grabaempresa(){
+  
+    var id_tipo_identificacion=$("#t_identificacion").val();
+    var identificacion=$("#identificacion").val();
+    var razon_social=$("#razon_social").val();
+    var id_pais=$("#pais").val();
+    var id_provincia=$("#provincia").val();
+    var id_ciudad=$("#ciudad").val();
+    var direccion=$("#direccion").val();
+    var telefono1=$("#telefono1").val();
+    var telefono2=$("#telefono2").val();
+    var celular=$("#celular").val();
+    var email=$("#mail").val();
+    var accion="crea_empresa";
+    
+    if(id_tipo_identificacion == 0){ MsgSalidaModalE("Debe seleccionar un tipo de identificación");  return;    }
+    if(identificacion.length == 0){ MsgSalidaModalE("Debe ingresa el numero de Identificación"); return; }
+    if(razon_social.length == 0){  MsgSalidaModalE("Debe de ingresar el nombre de la razón socila");  return; }
+    if(id_pais == 0){  MsgSalidaModalE("Seleccione un País"); return; }
+    if(id_provincia == 0){  MsgSalidaModalE("Seleccione una Provincia"); return; }
+    if(id_ciudad == 0){  MsgSalidaModalE("Seleccione una Ciudad"); return; }
+    if(direccion.length == 0){  MsgSalidaModalE("Ingrese la dirección de empresa"); return; }
+    if(telefono1.length == 0 && telefono2.length == 0 && celular.length == 0 )
+    {  MsgSalidaModalE("Ingrese por lo menos un numero de teléfono"); return; }
+    if(email.length == 0){  MsgSalidaModalE("Ingrese un correo"); return; }
+    // MsgSalidaModal("ok");
+    // return;
+         var parametros = {
+            "accion": accion,
+            "id_tipo_identificacion": id_tipo_identificacion,
+            "identificacion":identificacion,
+            "razon_social": razon_social,
+            "id_pais": id_pais,
+            "id_provincia": id_provincia,
+            "id_ciudad": id_ciudad,
+            "direccion": direccion,
+            "telefono1": telefono1,
+            "telefono2": telefono2,
+             "celular": celular,
+            "email": email            
+        };
+        
+         $.ajax({
+            data: parametros,
+            url: 'empresa',
+            type: 'post',
+            beforeSend: function () {
+            },
+            success: function (response) {
+               MsgSalidaModal(response.toString());
+               frm_empresa();
+            }
+        });
     
     
 }
+
+
+

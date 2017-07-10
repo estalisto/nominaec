@@ -5,10 +5,10 @@
  */
 package com.nomina.servicios;
 
-import com.nomina.modal.ClCiudad;
-import com.nomina.modal.ClPais;
-import com.nomina.modal.ClProvincia;
-import com.nomina.modal.HibernateUtil;
+import com.nomina.model.ClCiudad;
+import com.nomina.model.ClPais;
+import com.nomina.model.ClProvincia;
+import com.nomina.model.HibernateUtil;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
